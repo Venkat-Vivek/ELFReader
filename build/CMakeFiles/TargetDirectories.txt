@@ -1,0 +1,3 @@
+/home/venkat-pt7718/ELFReader/build/CMakeFiles/elf_parser.dir
+/home/venkat-pt7718/ELFReader/build/CMakeFiles/edit_cache.dir
+/home/venkat-pt7718/ELFReader/build/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,103 @@
+#include "DynamicEntry.h"
+#include<unordered_map>
+
+using namespace std;
+
+void DynamicEntry::printDynamicEntry() {
+  
+    unordered_map<int, string> dynamic_array_tags_map = {
+        {0, "DT_NULL"},
+        {1, "DT_NEEDED"},
+        {2, "DT_PLTRELSZ"},
+        {3, "DT_PLTGOT"},
+        {4, "DT_HASH"},
+        {5, "DT_STRTAB"},
+        {6, "DT_SYMTAB"},
+        {7, "DT_RELA"},
+        {8, "DT_RELASZ"},
+        {9, "DT_RELAENT"},
+        {10, "DT_STRSZ"},
+        {11, "DT_SYMENT"},
+        {12, "DT_INIT"},
+        {13, "DT_FINI"},
+        {14, "DT_SONAME"},
+        {15, "DT_RPATH"},
+        {16, "DT_SYMBOLIC"},
+        {17, "DT_REL"},
+        {18, "DT_RELSZ"},
+        {19, "DT_RELENT"},
+        {20, "DT_PLTREL"},
+        {21, "DT_DEBUG"},
+        {22, "DT_TEXTREL"},
+        {23, "DT_JMPREL"},
+        {24, "DT_BIND_NOW"},
+        {25, "DT_INIT_ARRAY"},
+        {26, "DT_FINI_ARRAY"},
+        {27, "DT_INIT_ARRAYSZ"},
+        {28, "DT_FINI_ARRAYSZ"},
+        {29, "DT_RUNPATH"},
+        {30, "DT_FLAGS"},
+        {32, "DT_ENCODING"},
+        {32, "DT_PREINIT_ARRAY"},
+        {33, "DT_PREINIT_ARRAYSZ"},
+        {34, "DT_MAXPOSTAGS"},
+        {0x6000000d, "DT_LOOS"},
+        {0x6000000d, "DT_SUNW_AUXILIARY"},
+        {0x6000000e, "DT_SUNW_RTLDINF"},
+        {0x6000000e, "DT_SUNW_FILTER"},
+        {0x60000010, "DT_SUNW_CAP"},
+        {0x60000011, "DT_SUNW_SYMTAB"},
+        {0x60000012, "DT_SUNW_SYMSZ"},
+        {0x60000013, "DT_SUNW_ENCODING"},
+        {0x60000013, "DT_SUNW_SORTENT"},
+        {0x60000014, "DT_SUNW_SYMSORT"},
+        {0x60000015, "DT_SUNW_SYMSORTSZ"},
+        {0x60000016, "DT_SUNW_TLSSORT"},
+        {0x60000017, "DT_SUNW_TLSSORTSZ"},
+        {0x60000018, "DT_SUNW_CAPINFO"},
+        {0x60000019, "DT_SUNW_STRPAD"},
+        {0x6000001a, "DT_SUNW_CAPCHAIN"},
+        {0x6000001b, "DT_SUNW_LDMACH"},
+        {0x6000001d, "DT_SUNW_CAPCHAINENT"},
+        {0x6000001f, "DT_SUNW_CAPCHAINSZ"},
+        {0x6ffff000, "DT_HIOS"},
+        {0x6ffffd00, "DT_VALRNGLO"},
+        {0x6ffffdf8, "DT_CHECKSUM"},
+        {0x6ffffdf9, "DT_PLTPADSZ"},
+        {0x6ffffdfa, "DT_MOVEENT"},
+        {0x6ffffdfb, "DT_MOVESZ"},
+        {0x6ffffdfd, "DT_POSFLAG_1"},
+        {0x6ffffdfe, "DT_SYMINSZ"},
+        {0x6ffffdff, "DT_SYMINENT"},
+        {0x6ffffdff, "DT_VALRNGHI"},
+        {0x6ffffe00, "DT_ADDRRNGLO"},
+        {0x6ffffefa, "DT_CONFIG"},
+        {0x6ffffefb, "DT_DEPAUDIT"},
+        {0x6ffffefc, "DT_AUDIT"},
+        {0x6ffffefd, "DT_PLTPAD"},
+        {0x6ffffefe, "DT_MOVETAB"},
+        {0x6ffffeff, "DT_SYMINFO"},
+        {0x6ffffeff, "DT_ADDRRNGHI"},
+        {0x6ffffff9, "DT_RELACOUNT"},
+        {0x6ffffffa, "DT_RELCOUNT"},
+        {0x6ffffffb, "DT_FLAGS_1"},
+        {0x6ffffffc, "DT_VERDEF"},
+        {0x6ffffffd, "DT_VERDEFNUM"},
+        {0x6ffffffe, "DT_VERNEED"},
+        {0x6fffffff, "DT_VERNEEDNUM"},
+        {0x70000000, "DT_LOPROC"},
+        {0x70000001, "DT_SPARC_REGISTER"},
+        {0x7ffffffd, "DT_AUXILIARY"},
+        {0x7ffffffe, "DT_USED"},
+        {0x7fffffff, "DT_FILTER"},
+        {0x7fffffff, "DT_HIPROC"}
+    };
+
+    cout << "Tag: " << dynamic_array_tags_map[d_tag] << endl;
+    
+    if (d_tag % 2 == 0) {
+        cout << "Address (d_ptr): " << "0X" << hex << d_un.d_ptr << endl;
+    } else {
+        cout << "Value (d_val): " << d_un.d_val << endl;
+    }
+}
